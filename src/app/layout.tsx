@@ -7,8 +7,12 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
-
-const inter = Inter({subsets: ['latin'], weight: "500"})
+import { Montserrat } from "next/font/google";
+const montserrat = Montserrat({
+    subsets: ["latin", "cyrillic"],
+    weight: ["400", "500", "700", "900"],
+    display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "smllysite | Главная"
@@ -21,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
-      <main className="container">{children}</main>
+      <body className={montserrat.className}>
+      <main className="container w-full">{children}</main>
       </body>
     </html>
   );
