@@ -1,3 +1,6 @@
+## Дизайн сайта
+Дизайн сайта создается в [Figma](https://www.figma.com/design/Q2l3FEk4UEThiRtqGTcoMX/smllySite?node-id=0-1&t=fF1ks99LovFVJbWS-1) <- Кликните для перехода на доску
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
