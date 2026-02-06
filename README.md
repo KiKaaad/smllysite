@@ -25,8 +25,6 @@ bun dev
 
 При редактировании файлов `app/page.tsx` и подобных сайт автоматически обновляется 
 
-Этот проект использует шрифты [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) что автоматически загружается и оптимизируется [Geist](https://vercel.com/font)
-
 ## Прочее
 
 To learn more about Next.js, take a look at the following resources:
