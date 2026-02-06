@@ -45,19 +45,21 @@ export default function RootLayout({
       <body className={montserrat.className}>
 
       <main className="container w-full bg-[#111010]">
-          <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-160px)] z-5550 bg-[#111010]/20 backdrop-blur-[16px] rounded-[24px] border border-white/10 h-16 flex items-center justify-between px-6 shadow-xl">
-              <div className="font-bold text-3xl tracking-tighter text-gray-100">smalytale</div>
-
-              <div className="flex gap-8 font-medium text-base text-gray-300">
+          <nav className="fixed top-4 left-1/2 pl-6 pr-6 -translate-x-1/2 w-[calc(100%-160px)] z-5550 bg-[#111010]/20 backdrop-blur-[16px] rounded-[24px] border border-white/10 h-16 flex items-center justify-between shadow-xl">
+              <Link href="/">
+                  <div className="font-bold text-3xl tracking-tighter text-gray-100 mr-10">smalytale</div>
+              </Link>
+              <div className="flex gap-8 font-medium text-base justify-start text-gray-300">
                   <Link href="/" className="hover:text-white transition">Ресурсы</Link>
                   <Link href="/" className="hover:text-white transition">Сервера</Link>
-                  <Link href="/" className="hover:text-white transition">Правила</Link>
+                  <Link href="/" className="hover:text-white transition">Поддержка</Link>
               </div>
-
-              <div className="flex gap-4">
-                  <Link href="/" className="bg-white text-black px-5 py-1.5 rounded-full text-sm font-bold hover:bg-gray-200 transition">
-                      Войти
-                  </Link>
+              <div className="flex justify">
+                  <div className="flex gap-4">
+                      <Link href="/login" className="bg-white text-black px-5 py-1.5 rounded-full text-sm font-bold hover:bg-gray-200 transition">
+                          Войти
+                      </Link>
+                  </div>
               </div>
           </nav>
           {children}
@@ -66,7 +68,7 @@ export default function RootLayout({
                   <div className="relative z-10 flex">
                       <div>
                           <h1 className="text-[30px] font-black leading-none mb-4 text-gray-300">smlly, Nocm</h1>
-                          <hr className="w-46 pb-3 text-gray-300" ></hr>
+                          <hr className="w-46 pb-3 text-neutral-700" ></hr>
                           <div className="flex gap-2">
                               <div className="text-1xl font-medium text-gray-300">
                                   © 2021 – 2026</div>
