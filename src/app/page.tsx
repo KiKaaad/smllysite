@@ -44,7 +44,7 @@ export default function Home() {
                         </h4>
                         <div className="relative z-10 flex justify-between ml-22">
                             <img
-                                src="/hero.png"
+                                src="/spawn.png"
                                 alt="Hero Background"
                                 className="z-0 relative rounded-[60px]"
                                 />
@@ -57,7 +57,7 @@ export default function Home() {
                     <div className="relative z-10 h-140 flex justify-between">
                         <div className="relative z-10 flex justify-between mr-22">
                             <img
-                                src="/hero.png"
+                                src="/rooms.png"
                                 alt="Hero Background"
                                 className="z-0 relative rounded-[60px]"
                             />
