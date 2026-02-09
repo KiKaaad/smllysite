@@ -1,8 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Сайт Общаги | smalytale / FastMC
 
-## Getting Started
+Это будет что-то типо смеси вк и телеграма со связью с майнкрафт-сервером (управление аккаунтом и кланом)
 
-First, run the development server:
+## Дизайн сайта
+Дизайн сайта создается в [Figma](https://www.figma.com/design/Q2l3FEk4UEThiRtqGTcoMX/smllySite?node-id=0-1&t=fF1ks99LovFVJbWS-1) <- Кликните для перехода на доску
+
+Сайт создан на [Next.js](https://nextjs.org)
+
+## Хотите запустить сайт?
+
+Запустите dev сервер с помощью одной из этих команд:
 
 ```bash
 npm run dev
@@ -14,13 +21,11 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+По [http://localhost:3000](http://localhost:3000) вы сможете увидеть результат
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+При редактировании файлов `app/page.tsx` и подобных сайт автоматически обновляется 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
+## Прочее
 
 To learn more about Next.js, take a look at the following resources:
 
