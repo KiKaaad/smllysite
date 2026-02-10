@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TeamSlider from "@/components/TeamSlider";
 
 export default function Home() {
     return (
@@ -127,6 +128,7 @@ export default function Home() {
                             Наша прекрасная команда
                         </h5>
                     </div>
+                    <TeamSlider />
                 </div>
             </section>
 
