@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import {
-    NavigationMenu, NavigationMenuContent,
-    NavigationMenuItem, NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger
-} from "@/components/ui/navigation-menu";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {Github} from "lucide-react";
+import { Providers } from "@/components/providers";
+import Navbar from "@/components/navbar";
 const montserrat = Montserrat({
     subsets: ["latin", "cyrillic"],
     weight: ["400", "500", "700", "900"],
@@ -40,29 +35,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+    return (
     <html lang="ru">
       <body className={montserrat.className}>
 
       <main className="container w-full bg-[#050505]">
-          <nav className="fixed top-4 left-1/2 pl-6 pr-6 -translate-x-1/2 w-[calc(100%-160px)] z-5550 bg-[#111010]/20 backdrop-blur-[16px] rounded-[24px] border border-white/10 h-16 flex items-center justify-between shadow-xl">
-              <Link href="/">
-                  <div className="font-bold text-3xl tracking-tighter text-gray-100 mr-10">smalytale</div>
-              </Link>
-              <div className="flex gap-8 font-medium text-base justify-start text-gray-300">
-                  <Link href="/" className="hover:text-white transition">Ресурсы</Link>
-                  <Link href="/" className="hover:text-white transition">Сервера</Link>
-                  <Link href="/" className="hover:text-white transition">Поддержка</Link>
-              </div>
-              <div className="flex justify">
-                  <div className="flex gap-4">
-                      <Link href="/login" className="bg-white text-black px-5 py-1.5 rounded-full text-sm font-bold hover:bg-gray-200 transition">
-                          Войти
-                      </Link>
-                  </div>
-              </div>
-          </nav>
-          {children}
+          <Providers>
+              <Navbar />
+              {children}
+          </Providers>
           <div className="pr-16 pl-16">
               <div className="bg-[#141311] relative w-full h-[14rem] px-20 pt-20 rounded-t-[60px] shadow-[0_0_40px_20px_rgba(0,0,0,0.38)]">
                   <div className="relative z-10 flex">

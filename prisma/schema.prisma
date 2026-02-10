@@ -1,16 +1,52 @@
 generator client {
-  provider   = "prisma-client-js"
-  engineType = "library"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  username      String?   @unique
+  name          String?
+  lastName      String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  password      String?
+  image         String?
+
+  banner        String?
+  badges        Badge[]   @relation("UserBadges")
+  selectedBadgeId Int?    @map("selected_badge_id")
+  selectedBadge   Badge?  @relation("SelectedBadge", fields: [selectedBadgeId],
+
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map("users")
+}
+
+model Badge {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  label       String
+  description String?
+  iconUrl     String
+  color       String?
+
+  users           User[]   @relation("UserBadges")
+  selectedByUsers User[]   @relation("SelectedBadge")
+
+
+  @@map("badges")
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String  @map("user_id")
+  id                 Int     @id @default(autoincrement())
+  userId             Int     @map("user_id")
   type               String
   provider           String
   providerAccountId  String  @map("provider_account_id")
@@ -29,25 +65,13 @@ model Account {
 }
 
 model Session {
-  id           String   @id @default(cuid())
+  id           Int      @id @default(autoincrement())
   sessionToken String   @unique @map("session_token")
-  userId       String   @map("user_id")
+  userId       Int      @map("user_id") // Тип должен совпадать с User.id
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
-}
-
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-
-  @@map("users")
 }
 
 model VerificationToken {
