@@ -106,12 +106,19 @@ export default function RootLayout({
                         </div>
                     </div>
 
-                          <div className="flex gap-2">
-                              <a href="https://t.me/smaaaly" target="_blank" rel="noreferrer">
-                                  <Button variant="link" size="sm" className="text-gray-300 rounded-full hover:scale-110 transition-transform hover:bg-blue-500 bg-[#0a0a0a] cursor-pointer">
-                                      <TelegramIcon size={20} />
-                                  </Button>
-                              </a>
+                    <div className="flex bg-[#FFFFFF]/2 w-full h-2 mt-8 rounded-[100rem]"></div>
+                    <div className="flex justify-between items-start w-full mt-10">
+                        <div>
+                            <p className="text-[30px] font-semibold leading-none text-gray-300 mb-4">
+                                Наши ресурсы
+                            </p>
+                            <div className="flex gap-4">
+                                <a href="https://t.me/smaaaly" target="_blank" rel="noreferrer">
+                                    <Button variant="link" size="sm"
+                                            className="text-gray-300 rounded-full w-15 h-15 hover:scale-90 transition-transform hover:bg-blue-500 bg-blue-500/50 cursor-pointer">
+                                        <img src="/telegram.svg" alt="Telegram" className="w-12"/>
+                                    </Button>
+                                </a>
 
                               <a href="https://discord.gg/3JSz5fEeee" target="_blank" rel="noreferrer">
                                   <Button variant="link" size="sm" className="text-gray-300 rounded-full hover:scale-110 transition-transform hover:bg-indigo-500 bg-[#0a0a0a] cursor-pointer">
