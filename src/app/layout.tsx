@@ -120,12 +120,12 @@ export default function RootLayout({
                                     </Button>
                                 </a>
 
-                              <a href="https://discord.gg/3JSz5fEeee" target="_blank" rel="noreferrer">
-                                  <Button variant="link" size="sm" className="text-gray-300 rounded-full hover:scale-110 transition-transform hover:bg-indigo-500 bg-[#0a0a0a] cursor-pointer">
-                                      <DiscordIcon size={20}/>
-                                  </Button>
-                              </a>
-                          </div>
+                                <a href="https://discord.gg/3JSz5fEeee" target="_blank" rel="noreferrer">
+                                    <Button variant="link" size="sm"
+                                            className="text-gray-300 rounded-full w-15 h-15 hover:scale-90 transition-transform hover:bg-indigo-500 bg-indigo-500/50 cursor-pointer">
+                                        <img src="/discord.svg" alt="Discord" className="w-12"/>
+                                    </Button>
+                                </a>
 
                           <a href="https://github.com/KiKaaad/smllysite" target="_blank" rel="noreferrer">
                               <Button variant="link" size="sm" className="text-gray-300 rounded-full hover:scale-110 transition-transform hover:bg-teal-500 bg-[#0a0a0a] cursor-pointer gap-2">
