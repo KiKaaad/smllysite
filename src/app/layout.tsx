@@ -59,11 +59,9 @@ export default function RootLayout({
                             <div>
                                 <h1 className="text-[36px] font-bold leading-none text-gray-300">smlly, Nocm</h1>
                                 <div className="w-full max-w-[250px] my-4 bg-white/5 h-1 rounded-full"></div>
-                                <div className="flex gap-2 text-sm">
-                                    <span className="text-gray-500">© 2001 – 2026</span>
-                                    <span className="text-gray-500">created by
-                            <a href="https://t.me/kikaad" className="text-[#27A356] ml-1 hover:text-pink-300 transition-colors">KiKa</a>
-                        </span>
+                                <div className="flex gap-2 font-medium">
+                                    <span className="text-gray-200">© 2001 – 2026</span>
+                                    <a href="https://t.me/kikaad" className="text-[#27A356] hover:text-pink-300 transition-colors">created by KiKa</a>
                                 </div>
                             </div>
                         </div>
