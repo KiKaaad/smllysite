@@ -3,8 +3,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import {Github} from "lucide-react";
-import { Providers } from "@/components/providers";
+import {Providers} from "@/components/providers";
 import Navbar from "@/components/navbar";
 const montserrat = Montserrat({
     subsets: ["latin", "cyrillic"],
