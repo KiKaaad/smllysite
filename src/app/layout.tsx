@@ -136,12 +136,29 @@ export default function RootLayout({
                             </div>
                         </div>
 
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </main>
-      </body>
-    </html>
-  );
+                        <div className="flex gap-4 ">
+                            <div className="bg-[#310A0A]/75 h-44 w-100 rounded-[48px]">
+                                <h4 className="text-[36px] font-bold leading-none text-gray-300 mt-8 ml-8 mb-5">Кошмарная зона</h4>
+                                <div className="mb-2">
+                                    <Link href="/" className="text-[20px] font-medium leading-none text-gray-300/70 hover:text-gray-300 ml-8">Политика конфиденциальности</Link>
+                                </div>
+                                <Link href="/" className="text-[20px] font-medium leading-none text-gray-300/70 hover:text-gray-300 ml-8">Политика сообщества</Link>
+                            </div>
+                            <div className="bg-[#0A3120]/75 h-44 w-70 rounded-[48px]">
+                                <h4 className="text-[36px] font-bold leading-none text-gray-300 hover:text-gray-300 mt-8 ml-8 mb-5">Tools</h4>
+                                <div className="mb-2">
+                                    <Link href="/" className="text-[20px] font-medium leading-none text-gray-300/70 hover:text-gray-300 ml-8">Dev Tools</Link>
+                                </div>
+                                    <Link href="/" className="text-[20px] font-medium leading-none text-gray-300/70 hover:text-gray-300 ml-8 mt-2">Случайная страница</Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p className="text-[60vh] font-semibold text-[#3CCD7D] text-center leading-none mt-15">smlly</p>
+                </div>
+            </div>
+        </main>
+        </body>
+        </html>
+    );
 }
