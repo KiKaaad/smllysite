@@ -127,12 +127,14 @@ export default function RootLayout({
                                     </Button>
                                 </a>
 
-                          <a href="https://github.com/KiKaaad/smllysite" target="_blank" rel="noreferrer">
-                              <Button variant="link" size="sm" className="text-gray-300 rounded-full hover:scale-110 transition-transform hover:bg-teal-500 bg-[#0a0a0a] cursor-pointer gap-2">
-                                  <span className="text-xs opacity-70">smlly is open source</span>
-                                  <Github size={20} />
-                              </Button>
-                          </a>
+                                <a href="https://github.com/KiKaaad/smllysite" target="_blank" rel="noreferrer">
+                                    <Button variant="link" size="sm"
+                                            className="text-gray-300 rounded-full h-15 w-15 hover:scale-90 transition-transform hover:bg-teal-500 bg-teal-500/50 cursor-pointer">
+                                        <img src="/github.svg" alt="GitHub" className="w-12"/>
+                                    </Button>
+                                </a>
+                            </div>
+                        </div>
 
                       </div>
                   </div>
