@@ -39,24 +39,74 @@ export default function RootLayout({
     <html lang="ru">
       <body className={montserrat.className}>
 
-      <main className="container w-full bg-[#050505]">
-          <Providers>
-              <Navbar />
-              {children}
-          </Providers>
-          <div className="pr-16 pl-16">
-              <div className="bg-[#141311] relative w-full h-[14rem] px-20 pt-20 rounded-t-[60px] shadow-[0_0_40px_20px_rgba(0,0,0,0.38)]">
-                  <div className="relative z-10 flex">
-                      <div>
-                          <h1 className="text-[30px] font-black leading-none mb-4 text-gray-300">smlly, Nocm</h1>
-                          <hr className="w-46 pb-3 text-neutral-700" ></hr>
-                          <div className="flex gap-2">
-                              <div className="text-1xl font-medium text-gray-300">
-                                  © 2021 – 2026</div>
-                              <div className="text-gray-400 font-medium">by KiKa</div>
-                          </div>
-                      </div>
-                      <div className="ml-auto flex flex-col items-end gap-2">
+        <main className="container w-full bg-[#050505]">
+            <Providers>
+                <Navbar/>
+                {children}
+            </Providers>
+
+            {/*  Это так называемый футер (это пиздец) */}
+
+            <div className="pr-20 pl-20">
+                <div className="bg-[#080808] relative w-full px-20 py-16 rounded-t-[60px] shadow-[0_0_40px_20px_rgba(0,0,0,0.38)]">
+                    <div className="relative z-10 flex justify-between items-start">
+
+                        {/* Левая часть */}
+                        <div className="flex gap-4">
+                            <div className="content-center">
+                                <img src="favicon.png" alt="logo" className="w-16 h-16" />
+                            </div>
+                            <div>
+                                <h1 className="text-[36px] font-bold leading-none text-gray-300">smlly, Nocm</h1>
+                                <div className="w-full max-w-[250px] my-4 bg-white/5 h-1 rounded-full"></div>
+                                <div className="flex gap-2 text-sm">
+                                    <span className="text-gray-500">© 2001 – 2026</span>
+                                    <span className="text-gray-500">created by
+                            <a href="https://t.me/kikaad" className="text-[#27A356] ml-1 hover:text-pink-300 transition-colors">KiKa</a>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Колонки */}
+
+                        <div className="flex gap-16">
+
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-[28px] text-white font-bold flex items-start gap-2">⚽ Основное</h3>
+                                <ul className="text-[18px] text-white/40 font-medium flex flex-col gap-1">
+                                    <li className="hover:text-gray-300 cursor-pointer">Кто мы</li>
+                                    <li className="hover:text-gray-300 cursor-pointer">Цели сообщества</li>
+                                    <li className="hover:text-gray-300 cursor-pointer">Поддержать нас</li>
+                                </ul>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-[28px] text-white font-bold flex items-start gap-2">📜 Правила</h3>
+                                <ul className="text-[18px] text-white/40 font-medium flex flex-col gap-1">
+                                    <li className="hover:text-gray-300 cursor-pointer">Правила ТГ</li>
+                                    <li className="hover:text-gray-300 cursor-pointer">Правила ДС</li>
+                                    <li className="hover:text-gray-300 cursor-pointer">Общие правила</li>
+                                </ul>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-[28px] text-white font-bold flex items-start gap-2">🍩 Ресурсы</h3>
+                                <ul className="text-[18px] text-white/40 font-medium flex flex-col gap-1">
+                                    <li className="hover:text-gray-300 cursor-pointer">Медиа-ресурсы</li>
+                                    <li className="hover:text-gray-300 cursor-pointer">Поддержка</li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-[28px] text-white font-bold flex items-start gap-2">🏓 Недавнее</h3>
+                                <ul className="text-[18px] text-white/40 font-medium flex flex-col gap-1">
+                                    <li className="">{'{'} Contents not found {'}'}</li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
 
                           <div className="flex gap-2">
                               <a href="https://t.me/smaaaly" target="_blank" rel="noreferrer">
