@@ -95,7 +95,7 @@ export default function RootLayout({
                     <div className="flex bg-[#FFFFFF]/2 w-full h-2 mt-8 rounded-[100rem]"></div>
                     <div className="flex justify-between items-start w-full mt-10">
                         <div>
-                            <p className="text-[30px] font-semibold leading-none text-gray-300 mb-4">
+                            <p className="text-[30px] font-semibold leading-none text-gray-300 mb-6">
                                 Наши ресурсы
                             </p>
                             <div className="flex gap-4">
