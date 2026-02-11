@@ -120,6 +120,10 @@ export default function RootLayout({
                                     </Button>
                                 </a>
                             </div>
+                            <div className="flex flex-col gap-2">
+                                <p className="text-[30px] text-white font-bold flex items-start mt-8">Связаться с нами</p>
+                                <p className="text-[18px] text-white/50 font-medium flex">smaaaly@proton.me</p>
+                            </div>
                         </div>
 
                         <div className="flex gap-4 ">
