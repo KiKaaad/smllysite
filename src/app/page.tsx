@@ -1,3 +1,7 @@
+{/* Начальная страница */}
+{/* Начальная страница */}
+{/* Начальная страница */}
+
 import Image from "next/image";
 import TeamSlider from "@/components/TeamSlider";
 
@@ -5,24 +9,32 @@ export default function Home() {
     return (
         <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
 
-            {/*Начальная страница*/}
-
             <div className="pt-24 pl-10 pr-10">
                 <div className="relative h-[80vh] flex items-center px-20">
+                    <div className="z-10 max-w-6xl">
+                        <h1 className="text-[64px] font-bold leading-none mb-4 text-white">Общага - лучшее сообщество
+                            для ваших лапок</h1>
+                        <h2 className="text-2xl font-medium text-white">
+                            Самое адекватнейшее сообщество лапочек :З
+                        </h2>
+                    </div>
                     <Image
                         src="/hero.png"
                         alt="Hero Background"
                         fill
-                        className="object-cover opacity-75 z-0 rounded-[60px]"
+                        className="object-cover opacity-75 z-0 rounded-[64px]"
                         priority
                     />
-                    <div className="z-10 max-w-6xl">
-                        <h1 className="text-[64px] font-bold leading-none mb-4">Общага - лучшее сообщество
-                            для ваших лапок</h1>
-                        <h2 className="text-2xl font-medium text-gray-300">
-                            Самое адекватнейшее сообщество лапочек :З
-                        </h2>
-                    </div>
+
+                </div>
+            </div>
+
+            {/* Работа сервера */}
+
+            <div className="relative w-full h-100 mt-8 px-20 grid ">
+                <div className="relative z-10 max-w-4xl">
+                    <h3 className="text-[50px] font-bold leading-none">Статус работы сервера</h3>
+                    <div>test</div>
                 </div>
             </div>
 
@@ -125,7 +137,7 @@ export default function Home() {
                 <div className="relative w-full p-20 px-20">
                     <div className="relative z-10">
                         <h5 className="text-[64px] font-bold leading-none text-center">
-                            Наша прекрасная команда
+                            Наша команда лапочек
                         </h5>
                     </div>
                     <TeamSlider />

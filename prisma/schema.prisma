@@ -1,11 +1,9 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -21,7 +19,7 @@ model User {
   banner        String?
   badges        Badge[]   @relation("UserBadges")
   selectedBadgeId Int?    @map("selected_badge_id")
-  selectedBadge   Badge?  @relation("SelectedBadge", fields: [selectedBadgeId],
+  selectedBadge   Badge?  @relation("SelectedBadge", fields: [selectedBadgeId], references: [id])
 
   accounts      Account[]
   sessions      Session[]

@@ -1,6 +1,6 @@
 "use server";
 
 import { getServerSession } from "next-auth";
-import { nextAuthConfig } from "@/entities/session/next-auth-config";
+import { auth } from "@/entities/session/auth";
 
-export const getAppSessionServer = () => getServerSession(nextAuthConfig);
+export const getAppSessionServer = () => getServerSession(auth);

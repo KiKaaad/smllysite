@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: "smllysite | Наши ресурсы"
 };
 
-export default function Home() {
+export default function Source() {
     return (
         <div>
             <h1>Resource page</h1>
