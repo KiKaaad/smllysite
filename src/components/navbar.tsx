@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,11 +13,10 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
-    CreditCardIcon,
     LogOutIcon,
-    SettingsIcon,
-    UserIcon,
 } from "lucide-react"
+
+// Конец импортов
 
 export default function Navbar() {
     const { data: session } = useSession();
@@ -43,7 +41,7 @@ export default function Navbar() {
                         <div className="flex items-center gap-3 cursor-pointer">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    <div className="w-12 h-12 relative border-2 border-white/20 rounded-full overflow-hidden">
+                                    <div className="w-12 h-12 relative border-2 border-white/20 rounded-full overflow-hidden transition-all hover:brightness-110 active:scale-90">
                                         <Image
                                             src={session.user?.image || "/default-avatar.png"}
                                             alt="Avatar"
@@ -52,9 +50,9 @@ export default function Navbar() {
                                         />
                                     </div>
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent className="mt-5 mr-20 text-white bg-[#111010]/20 backdrop-blur-[16px] border-white/10 rounded-[24px]">
+                                <DropdownMenuContent className="mt-5 mr-20 text-white bg-[#111010]/20 backdrop-blur-[16px] border-white/10 rounded-[24px] z-12500 ">
                                     <DropdownMenuGroup className="">
-                                        <DropdownMenuLabel className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">Аккаунт</DropdownMenuLabel>
+                                        <Link href={`/${session?.user?.username || ''}`}><DropdownMenuLabel className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">Профиль</DropdownMenuLabel></Link>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Настройки</DropdownMenuItem>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Сообщения</DropdownMenuItem>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Каналы</DropdownMenuItem>

@@ -1,3 +1,5 @@
+import Navbar from "@/components/navbar";
+
 {/* Начальная страница */}
 {/* Начальная страница */}
 {/* Начальная страница */}
@@ -8,7 +10,7 @@ import TeamSlider from "@/components/TeamSlider";
 export default function Home() {
     return (
         <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-
+            <Navbar/>
             <div className="pt-24 pl-10 pr-10">
                 <div className="relative h-[80vh] flex items-center px-20">
                     <div className="z-10 max-w-6xl">

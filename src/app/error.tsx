@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type {Metadata} from "next";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
     title: "smllysite | 500 Что-то пошло не так"
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-
+            <Navbar />
             {/* 500 */}
 
             {/* Динамический остров */}

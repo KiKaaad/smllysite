@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { HeaderAuth } from "@/components/navbarauth";
 
 export const metadata: Metadata = {
     title: "smlly | Smllygram"
@@ -9,18 +10,9 @@ export default function Femay() {
     return (
         <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
 
-            {/* 404 */}
+            <HeaderAuth/>
 
-            {/* Динамический остров */}
-
-            <nav className="fixed top-22 w-80 ml-40 z-5550 bg-[#111010]/20 backdrop-blur-[16px] rounded-[100px] border border-white/10 h-15 flex items-center justify-center shadow-xl">
-                <div className="flex justify-center">
-                    <img src="mention.svg" alt="message" style={{ width: "35%" }} className="" />
-                    <h6 className="text-center font-medium">Сообщения</h6>
-                </div>
-            </nav>
-
-            <div className="relative w-full p-20 px-20 flex justify-between">
+            <div className="relative w-full p-20 px-20 flex justify-between h-123">
                 <div className="relative z-10 content-center    ">
                     <h1 className="text-[64px] font-bold leading-none mb-4">Work in process... <br/><span className="text-pink-300">Эта страница находится в разработке</span></h1>
                     <h2 className="text-2xl font-medium text-gray-300">

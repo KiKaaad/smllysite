@@ -1,13 +1,29 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { withAuth } from "next-auth/middleware"
+import { NextResponse } from "next/server"
 
-export function middleware(req: NextRequest) {
-    const isInMaintenanceMode = process.env.MAINTENANCE_MODE === 'true';
-    const { pathname } = req.nextUrl;
+export default withAuth(
+    function middleware(req) {
+        const token = req.nextauth.token
 
-    if (isInMaintenanceMode && !pathname.startsWith('/maintenance') && !pathname.startsWith('/_next')) {
-        return NextResponse.redirect(new URL('/maintenance', req.url));
+        if (token && !token.isOnboarded) {
+            return NextResponse.redirect(new URL("/auth/login", req.url))
+        } return NextResponse.next()
+    },
+    {
+        callbacks: {
+            authorized: ({ token }) => !!token,
+        },
+        pages: {
+            signIn: "/auth/signup",
+        },
     }
+)
 
-    return NextResponse.next();
+
+// Страницы на которые нельзя попасть, если пользователь на авторизован
+export const config = {
+    matcher: [
+        "/settings/:path*",
+        "/dashboard/:path*",
+    ],
 }
