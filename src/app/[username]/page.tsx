@@ -166,9 +166,25 @@ export default async function ProfilePage({params}: { params: Promise<{ username
 
                     <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
 
-                    <div className="ml-10 mt-2">
-                        <p className="text-white text-lg mt-1 font-bold text-[32px]">@{user.username}</p>
-                        <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
+                        <div className="ml-10 mt-2">
+                            <p className="text-white text-lg mt-1 font-bold text-[32px]">13 апреля 2001 года (24 года)</p>
+                            <p className="text-white/40 text-lg mt-1 font-medium">Дата рождения</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex w-full">
+                    <div className="flex flex-col h-100 w-full bg-[#090909] rounded-[48px] mb-12 mr-14">
+                        <div className="ml-10 mt-4">
+                            <p className="text-white text-lg mt-1 font-bold text-[32px]">@{user.username}</p>
+                            <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
+                        </div>
+
+                        <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
+
+                        <div className="ml-10 mt-2">
+                            <p className="text-white text-lg mt-1 font-bold text-[32px]">@{user.username}</p>
+                            <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
+                        </div>
                     </div>
                 </div>
             </div>
