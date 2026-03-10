@@ -72,6 +72,24 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                     />
                 </div>
 
+                <div className="flex justify-end absolute mt-8 right-8 z-1 w-full">
+                    <HoverCard>
+                        <HoverCardTrigger><InfoIcon className="transition-transform hover:scale-115"/></HoverCardTrigger>
+                        <HoverCardContent className="w-75 bg-[#090909]/20 border-white/10 backdrop-blur-[16px] text-white rounded-[26px] mr-2" side="left" align="start">
+                            <div className="flex justify-between items-center">
+                                <p className="font-bold text-[1.2rem]">8 июня 2018 года</p>
+                                <CalendarIcon/>
+                            </div>
+                            <p className="font-normal text-white/75 text-[.9rem]">Аккаунт создан</p>
+                            <div className="flex justify-between items-center mt-2">
+                                <p className="font-bold text-[1.2rem]">{user.id}</p>
+                                <StoneIcon/>
+                            </div>
+                            <p className="font-normal text-white/75 text-[.9rem]">DC3, Sankt-Petersburg, RU</p>
+                        </HoverCardContent>
+                    </HoverCard>
+                </div>
+
                 <div className="relative pt-24 pb-12 flex flex-col items-center px-6">
 
                     {/* Аватарка */}
