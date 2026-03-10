@@ -1,12 +1,25 @@
 import prisma from "@/lib/prisma"
-import { notFound } from "next/navigation"
 import type {Metadata} from "next";
 import {HeaderAuth} from "@/components/navbarauth";
+import {
+    CalendarIcon,
+    CircleAlertIcon,
+    EyeIcon,
+    HeartIcon,
+    InfoIcon,
+    Newspaper,
+    StoneIcon,
+    UserRound
+} from "lucide-react";
+import {HoverCard} from "@/components/ui/hover-card";
+import {HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
+import backButton from "@/lib/redirectBack";
+import UseRedirectBackFurry from "@/lib/redirectBack";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-// Функция создает в титуле юзернейм пользователя
+
 export async function generateMetadata({ params }: { params: Promise<{ username: string }> }): Promise<Metadata> {
     const { username } = await params
 
@@ -18,7 +31,9 @@ export async function generateMetadata({ params }: { params: Promise<{ username:
     }
 }
 
-// Страница
+const HOVER_CARD_SIDES = ["left", "top", "bottom", "right"] as const
+
+    // Страница
 export default async function ProfilePage({params}: { params: Promise<{ username: string }> }) {const { username } = await params
 
     // Поиск пользователя
@@ -62,12 +77,13 @@ export default async function ProfilePage({params}: { params: Promise<{ username
         <main className="flex min-h-screen flex-col items-center bg-[#050505] text-white mx-4 md:mx-14">
             <HeaderAuth />
 
+            {/* Баннер */}
             <div className="relative w-full max-w-[97%] border border-white/10 bg-[#160f0f] rounded-[48px] overflow-hidden mt-24 min-h-[500px]">
 
                 <div className="absolute top-0 left-0 right-0 h-full w-full">
                     <img
-                        src="/avatartrashracc00n.gif"
-                        alt="banner"
+                        src="/abstractimage.png"
+                        alt="ProfileBanner"
                         className="w-full h-full object-cover"
                     />
                 </div>
@@ -93,7 +109,7 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                 <div className="relative pt-24 pb-12 flex flex-col items-center px-6">
 
                     {/* Аватарка */}
-                    <div className="group relative border-4 border-[#160f0f] rounded-full overflow-hidden w-40 h-40 bg-zinc-950/20 border-white/10 shadow-2xl transition-transform hover:scale-105">
+                    <div className="group relative rounded-full overflow-hidden w-40 h-40 bg-zinc-950/20 border-2 border-white/10 shadow-2xl transition-transform hover:scale-105">
                         <img
                             src={user.image || "/default-avatar.png"}
                             alt={user.username || "User"}
@@ -134,6 +150,7 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                 <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><EyeIcon className="mr-2 text-[#31EB7C]"/>642 тыс. просмотров</div>
                 <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><Newspaper className="mr-2 text-[#31EB7C]"/>23 поста за месяц</div>
             </div>
+
             <div className="flex w-full ml-14">
                 <div className="flex w-full">
                     <div className="flex flex-col h-full w-full bg-[#090909] rounded-[48px] pb-8 mr-4">
@@ -164,7 +181,7 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                             <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
                         </div>
 
-                    <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
+                        <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
 
                         <div className="ml-10 mt-2">
                             <p className="text-white text-lg mt-1 font-bold text-[32px]">13 апреля 2001 года (24 года)</p>
@@ -188,6 +205,7 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                     </div>
                 </div>
             </div>
+
         </main>
     )
 }

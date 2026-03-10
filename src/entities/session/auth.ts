@@ -2,10 +2,10 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import GithubProvider from "next-auth/providers/github";
 import prisma from "@/lib/prisma";
 import type { NextAuthOptions } from "next-auth";
-import {AdapterUser} from "next-auth/adapters";
+import { AdapterUser } from "next-auth/adapters";
 
 interface ExtendedAdapterUser extends AdapterUser {
-    username?: string | null;
+    username?: string | undefined;
     isOnboarded?: boolean;
 }
 

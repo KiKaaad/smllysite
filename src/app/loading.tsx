@@ -3,22 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type {Metadata} from "next";
 
-export const metadata: Metadata = {
-    title: "smllysite | 500 Что-то пошло не так"
-};
-
 export default function Home() {
     return (
         <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
-
-            {/* 404 */}
-
-            {/* Динамический остров */}
-
-            <nav className="fixed top-22 w-45 z-5550 right-40 bg-[#111010]/20 backdrop-blur-[16px] rounded-[100px] border border-white/10 h-12 flex items-center justify-center shadow-xl">
-                <h6 className="text-center font-medium">Загружаемся...</h6>
-            </nav>
-
             <div className="relative w-full p-20 px-20 flex justify-between">
                 <div className="relative z-10 content-center    ">
                     <h1 className="text-[64px] font-bold leading-none mb-4">Вот сейчас, <span className="text-pink-300">скоро загрузимся...</span></h1>

@@ -68,7 +68,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                             <Field className="mt-4">
                                 <Button
                                     disabled={isPending}
-                                    className="w-full bg-white text-black text-[1.1rem] hover:bg-white/70 cursor-pointer font-semibold py-6 rounded-xl"
+                                    className="w-full bg-white text-black text-[1.1rem] hover:bg-white/70 cursor-pointer font-semibold py-6 rounded-[16px] mb-6"
                                     type="submit"
                                 >
                                     {isPending ? "Сохранение..." : "Завершить регистрацию"}

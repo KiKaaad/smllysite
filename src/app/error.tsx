@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type {Metadata} from "next";
 import Navbar from "@/components/navbar";
+import UseRedirectBackFurry from "@/lib/redirectBack";
 
 export const metadata: Metadata = {
     title: "smllysite | 500 Что-то пошло не так"
@@ -24,21 +25,13 @@ export default function Home() {
                 <div className="relative z-10 content-center    ">
                     <h1 className="text-[64px] font-bold leading-none mb-4">500, <span className="text-pink-300">это наша проблема</span></h1>
                     <h2 className="text-2xl font-medium text-gray-300">
-                        Не бойтесь, вы можете вернуться на главную, <br />тыкнув на фуренка справа
+                        Не бойтесь, вы можете вернуться обратно, <br />тыкнув на фуренка справа
                     </h2>
                     <h2 className="text-2xl font-medium text-gray-300 mt-10">
                         Если такое повторится, пожалуйста, сообщите <a href="https://t.me/kikaaad" className="text-pink-300">t.me/kikaaad</a> <br />или в канал идей по тегу «баг»
                     </h2>
                 </div>
-                <Link href="/">
-                    <div className="relative z-10 max-w-3xl">
-                        <img
-                            src="/furry404.png"
-                            alt="furry 404"
-                            className="z-0 relative"
-                        />
-                    </div>
-                </Link>
+                <UseRedirectBackFurry/>
             </div>
 
         </main>

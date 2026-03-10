@@ -8,7 +8,7 @@ import {
     Megaphone,
     Bookmark,
     LogOutIcon,
-    MessageCircleMore, EqualApproximately
+    MessageCircleMore, EqualApproximately, Leaf
 } from "lucide-react"
 import Link from "next/link"
 import {
@@ -20,6 +20,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Navbar from "@/components/navbar";
+import prisma from "@/lib/prisma";
 
 export function HeaderAuth() {
     const { data: session } = useSession()
@@ -57,9 +58,10 @@ export function HeaderAuth() {
                 <div className="flex items-center justify-between w-full max-w-[95%] p-2">
 
                     <Link href="/">
+
                         <div
-                            className="px-6 py-3 bg-zinc-950/50 backdrop-blur-[16px] rounded-[24px] font-bold text-white tracking-tight text-3xl border border-white/10">
-                            smalytale
+                            className="flex items-center gap-3 px-6 py-3 bg-zinc-950/75 backdrop-blur-[16px] rounded-[24px] font-bold text-white tracking-tight text-3xl border border-white/10">
+                            <Leaf size={26}></Leaf>smalygram.
                         </div>
                     </Link>
 
@@ -70,7 +72,33 @@ export function HeaderAuth() {
                         <NavItem icon={<Megaphone size={24}/>} label="Каналы"/>
                         <NavItem icon={<Bookmark size={24}/>} label="Избранное"/>
                         <div className="bg-white/10 w-1 h-12 rounded-full"></div>
-                        <NavItem icon={<EqualApproximately size={24}/>} label="Другое"/>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <NavItem icon={<EqualApproximately size={24}/>} label="Другое"/>
+                                <DropdownMenuContent
+                                    className="mt-5 mr-22 text-white bg-[#111010]/20 backdrop-blur-[16px] border-white/10 rounded-[24px] z-12500">
+                                    <DropdownMenuGroup className=""><DropdownMenuLabel
+                                            className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">Правила сообщества</DropdownMenuLabel>
+                                        <DropdownMenuItem
+                                            className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Что-то ещё...</DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Фурряшке</DropdownMenuItem>
+                                        <DropdownMenuItem
+                                            className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Избранное</DropdownMenuItem>
+                                    </DropdownMenuGroup>
+                                    <DropdownMenuSeparator className="bg-white/20"/>
+                                    <DropdownMenuItem
+                                        className="text-[1rem] text-red-400 bg-black/25  rounded-[.5rem] hover:bg-red-400/15 cursor-pointer"
+                                        variant="destructive">
+                                        <button className="w-full flex items-center cursor-pointer" onClick={() => signOut()}>
+                                            <LogOutIcon className="text-red-400"/>
+                                            <p className="pl-2">Выйти</p>
+                                        </button>
+                                    </DropdownMenuItem>
+                                    <p className="text-[.8rem] m-2 text-white/20">Версия сборки unknown</p>
+                                </DropdownMenuContent>
+                            </DropdownMenuTrigger>
+                        </DropdownMenu>
                     </nav>
 
                     <DropdownMenu>
@@ -94,7 +122,7 @@ export function HeaderAuth() {
                             className="mt-5 ml-1 text-white bg-[#111010]/20 backdrop-blur-[16px] border-white/10 rounded-[24px] z-12500">
                             <DropdownMenuGroup className="">
                                 <Link href={`/${session?.user?.username || ''}`}><DropdownMenuLabel
-                                    className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">Профиль</DropdownMenuLabel></Link>
+                                    className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">@{session?.user?.username}</DropdownMenuLabel></Link>
                                 <DropdownMenuItem
                                     className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Настройки</DropdownMenuItem>
                                 <DropdownMenuItem
@@ -124,7 +152,7 @@ export function HeaderAuth() {
 
 function NavItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
     return (
-        <div className={`flex flex-col items-center justify-center min-w-[70px] px-3 py-1 rounded-full cursor-pointer transition-all ${active ? 'bg-green-500/20 text-green-400' : 'text-white hover:text-white hover:bg-white/5'}`}>
+        <div className={`flex flex-col items-center justify-center min-w-[80px] px-3 py-1 rounded-full cursor-pointer transition-all ${active ? 'bg-green-500/20 text-green-400' : 'text-white hover:text-white hover:bg-white/5'}`}>
             {icon}
             <span className="text-[16px] font-medium mt-1 tracking-wider">{label}</span>
         </div>

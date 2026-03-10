@@ -28,7 +28,7 @@ export default function Navbar() {
             </Link>
 
             <div className="flex gap-8 font-medium text-[1.2rem] text-gray-300">
-                <Link href="/femay" className="hover:text-white transition">Smllygram</Link>
+                <Link href="/chats" className="hover:text-white transition">Smllygram</Link>
                 <Link href="/" className="hover:text-white transition">Ресурсы</Link>
                 <Link href="/" className="hover:text-white transition">Сервера</Link>
                 <Link href="/" className="hover:text-white transition">Поддержка</Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent className="mt-5 mr-20 text-white bg-[#111010]/20 backdrop-blur-[16px] border-white/10 rounded-[24px] z-12500 ">
                                     <DropdownMenuGroup className="">
-                                        <Link href={`/${session?.user?.username || ''}`}><DropdownMenuLabel className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">Профиль</DropdownMenuLabel></Link>
+                                        <Link href={`/${session?.user?.username || ''}`}><DropdownMenuLabel className="text-[1rem] hover:bg-black/25 rounded-t-[1.2rem] rounded-b-[0.25rem] cursor-pointer">@{session?.user?.username}</DropdownMenuLabel></Link>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Настройки</DropdownMenuItem>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Сообщения</DropdownMenuItem>
                                         <DropdownMenuItem className="text-[1rem] hover:bg-black/25 rounded-b-[0.25rem] rounded-t-[0.25rem] cursor-pointer">Каналы</DropdownMenuItem>

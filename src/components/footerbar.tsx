@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function FooterBar() {
     return (
-        <div className="pr-20 pl-20">
+        <div className="px-20 mt-8">
             <div className="bg-[#080808] relative w-full px-20 py-16 z-15000 rounded-t-[60px] shadow-[0_0_40px_20px_rgba(0,0,0,0.38)]">
                 <div className="relative z-10 flex justify-between items-start">
 

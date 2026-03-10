@@ -82,14 +82,12 @@ export default function TeamSlider() {
                             </div>
                             <h3
                                 className="text-3xl font-black leading-none mb-4"
-                                style={{ color: member.textColor || "#171717" }}
-                            >
+                                style={{ color: member.textColor || "#171717" }}>
                                 {member.name}
                             </h3>
                             <p
                                 className="font-medium text-[20px] text-center max-w-[250px] opacity-90"
-                                style={{ color: member.textColor || "#171717" }}
-                            >
+                                style={{ color: member.textColor || "#171717" }}>
                                 {member.role}
                             </p>
                         </div>
