@@ -125,6 +125,15 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                     </div>
                 </div>
             </div>
+
+
+            {/* Информация о просмотрах, реакциях пользователя */}
+            <div className="flex gap-5 mt-4 w-full max-w-[75%] justify-between mb-4 font-medium text-[1.15rem] text-white tracking-tight">
+                <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><UserRound className="mr-2 text-[#31EB7C]"/>24.123 подписчиков</div>
+                <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><HeartIcon className="mr-2 text-[#31EB7C]"/>27.531 реакций</div>
+                <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><EyeIcon className="mr-2 text-[#31EB7C]"/>642 тыс. просмотров</div>
+                <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><Newspaper className="mr-2 text-[#31EB7C]"/>23 поста за месяц</div>
+            </div>
             <div className="flex w-full ml-14">
                 <div className="flex flex-col h-100 w-full max-w-[40%] bg-[#090909] rounded-[48px] mt-8 mb-12">
                     <div className="ml-10 mt-4">
