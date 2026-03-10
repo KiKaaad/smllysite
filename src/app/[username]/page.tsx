@@ -29,7 +29,33 @@ export default async function ProfilePage({params}: { params: Promise<{ username
     })
 
     if (!user) {
-        notFound()
+        return (
+            <>
+                <main className="min-h-screen bg-[#050505] text-white overflow-x-hidden">
+                    <HeaderAuth />
+                    {/* 406 */}
+
+                    {/* Динамический остров */}
+
+                    <div className="flex justify-center ml-20">
+                        <nav className="fixed top-22 w-75 z-5550 bg-[#111010]/20 backdrop-blur-[16px] rounded-[100px] border border-white/10 h-12 flex items-center justify-center shadow-xl">
+                            <h6 className="text-center font-medium">406 | Пользователь не найден</h6>
+                        </nav>
+                    </div>
+
+                    <div className="relative w-full p-20 px-20 flex justify-between">
+                        <div className="relative z-10 content-center">
+                            <h1 className="text-[64px] font-bold leading-none mb-4">406, <span className="text-pink-300">мы не нашли такого пользователя</span></h1>
+                            <h2 className="text-2xl font-medium text-gray-300">
+                                Не бойтесь, вы можете вернуться обратно, <br />тыкнув на фуренка справа
+                            </h2>
+                        </div>
+                        <UseRedirectBackFurry/>
+                    </div>
+
+                </main>
+            </>
+        )
     }
 
     return (
