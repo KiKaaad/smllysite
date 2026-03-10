@@ -135,11 +135,34 @@ export default async function ProfilePage({params}: { params: Promise<{ username
                 <div className="h-12 w-full bg-[#090909] rounded-full flex items-center justify-center"><Newspaper className="mr-2 text-[#31EB7C]"/>23 поста за месяц</div>
             </div>
             <div className="flex w-full ml-14">
-                <div className="flex flex-col h-100 w-full max-w-[40%] bg-[#090909] rounded-[48px] mt-8 mb-12">
-                    <div className="ml-10 mt-4">
-                        <p className="text-white text-lg mt-1 font-bold text-[32px]">@{user.username}</p>
-                        <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
-                    </div>
+                <div className="flex w-full">
+                    <div className="flex flex-col h-full w-full bg-[#090909] rounded-[48px] pb-8 mr-4">
+                        <div className="ml-10 mt-4">
+                            <div className="flex items-center">
+                                <p className="text-white text-lg mt-1 font-bold text-[32px]">Email скрыт</p>
+                                <div className="text-black bg-amber-400 flex items-center rounded-full ml-4 w-125 mr-10">
+                                    <CircleAlertIcon className="m-2" size={50}/>
+                                    <p className="text-black text-lg font-medium text-[20px] mr-4 leading-7">Позже плашки «<span className="underline decoration-black">email скрыт</span>» не будет, если пользователь скрыл его</p>
+                                </div>
+                            </div>
+                            <p className="text-white/40 text-lg mt-1 font-medium">Email</p>
+                        </div>
+
+                        <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
+
+                        <div className="ml-10 mt-4">
+                            <p className="text-white text-lg mt-1 font-bold text-[32px] leading-10">Кисися*, кикидзилла*, кикаа*,
+                                почти миллиардер, фишбургер
+                                и гений?</p>
+                            <p className="text-white/40 text-lg mt-1 font-medium">О себе</p>
+                        </div>
+
+                        <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
+
+                        <div className="ml-10 mt-4">
+                            <p className="text-white text-lg mt-1 font-bold text-[32px]">@{user.username}</p>
+                            <p className="text-white/40 text-lg mt-1 font-medium">Имя пользователя</p>
+                        </div>
 
                     <div className="w h-1 bg-white/10 rounded-full mt-4 mx-8"></div>
 
